@@ -4,14 +4,14 @@ from .utils import displayfunctions, helperfunctions, settings as s
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, pos=None, v=None):
         super(Enemy, self).__init__()
-        self.image_file = s.SNAKE_IMAGE
-        self.width, self.height = s.SNAKE_WIDTH, s.SNAKE_HEIGHT
+        self.image_file = s.YILAN_IMAGE
+        self.width, self.height = s.YILAN_WIDTH, s.YILAN_HEIGHT
         self.base_image, self.rect = helperfunctions.image_with_rect(self.image_file, [self.width, self.height])
         self.image = self.base_image
         self.mask = pygame.mask.from_surface(self.image)
         self.mask = self.mask.scale((self.width, self.height))
 
-        self.mass = s.SNAKE_MASS
+        self.mass = s.YILAN_MASS
         self.max_speed = s.MAX_SPEED
         self.min_speed = s.MIN_SPEED
         self.wandering_angle = helperfunctions.randrange(-np.pi, np.pi)
